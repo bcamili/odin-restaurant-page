@@ -1,14 +1,114 @@
 html{
-    --backgroundColor: #c95555;
-    --backgroundDark: calc(var(--backgroundColor)/2);
-    --e: white;
+    --backgroundColor: rgb(75, 189, 174);
+    --backgroundDark: lch(from var(--backgroundColor) calc(l/4) c h);
+    --backgroundLight: lch(from var(--backgroundColor) calc(l*4) c h);;
     --f: white;
+
+    font-family: "Carter One";
+    font-size: 12px;
 }
 
 body{
-    background-color: var(--backgroundColor);
+    background: linear-gradient(var(--backgroundColor), var(--backgroundDark)) no-repeat;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
 }
 
 h1{
+    color: var(--backgroundDark);
+    font-family: "Mrs Sheppards";
+    font-size: 6rem;
+    text-shadow: -1px -2px 0px var(--backgroundLight);
+}
+
+p{
+    color: var(--backgroundLight);
+    font-size: 3rem;
+    width: 50%;
+    text-align: center;
+}
+header{
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    padding: 0px 30px 0px 30px;
+}
+
+#logoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo{
+    background: var(--backgroundDark);
+    mask: url('./dish-cap-icon.svg') no-repeat center;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+#brandname{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: var(--backgroundDark);
+}
+
+button{
+    color: var(--backgroundColor);
     background-color: var(--backgroundDark);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: var(--backgroundLight);
+}
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    gap: 10px;
+}
+
+.menuItem{
+    margin: 5px;
+}
+
+.itemBox{
+    display: flex;
+    background-color: var(--backgroundDark);
+    width: 400px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 5px solid var(--backgroundLight);
+}
+
+.itemBox p{
+    margin: 0px;
+}
+
+.selected{
+    border: 3px solid var(--backgroundLight);
 }
