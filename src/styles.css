@@ -1,3 +1,14 @@
+html{
+    --backgroundColor: #c95555;
+    --backgroundDark: calc(var(--backgroundColor)/2);
+    --e: white;
+    --f: white;
+}
+
 body{
-    background-color: rebeccapurple;
+    background-color: var(--backgroundColor);
+}
+
+h1{
+    background-color: var(--backgroundDark);
 }
